@@ -1,7 +1,0 @@
-package com.casestudy.project.model;
-
-public class Cart {
-	private int cartId;
-	private double totalprice;
-
-}

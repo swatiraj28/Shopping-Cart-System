@@ -1,7 +1,0 @@
-package com.casestudy.project.controller;
-@RestController
-public class CartResource {
-
-	
-	@Autowired
-}

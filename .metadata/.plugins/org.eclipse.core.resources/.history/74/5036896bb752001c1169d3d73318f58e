@@ -1,5 +1,0 @@
-package com.casestudy.project.repository;
-
-public interface CartRepository extends MongoRepository(Cart,String) {
-
-}
