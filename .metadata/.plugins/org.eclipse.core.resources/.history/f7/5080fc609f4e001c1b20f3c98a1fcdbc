@@ -1,0 +1,5 @@
+package com.casestudy.project.userprofile.model;
+
+public enum Role {
+
+}

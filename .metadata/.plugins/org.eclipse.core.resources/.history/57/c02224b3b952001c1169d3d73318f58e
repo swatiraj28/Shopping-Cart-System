@@ -1,0 +1,16 @@
+package com.casestudy.project.services;
+
+import java.util.List;
+
+import com.casestudy.project.model.Cart;
+
+public interface CartService {
+
+	public Cart getCartById(int cardId);
+	public Cart updateCart(Cart cart);
+	public List <Cart> getAllcarts(Cart cart );
+    public double cartTotal(Cart cart);
+	public Cart addCart(Cart cart);
+	List<Cart> getAllcarts();
+
+}

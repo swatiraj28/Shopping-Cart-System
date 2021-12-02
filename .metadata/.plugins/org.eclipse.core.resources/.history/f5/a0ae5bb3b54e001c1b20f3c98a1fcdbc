@@ -1,0 +1,10 @@
+package com.casestudy.project.userprofile.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.casestudy.project.userprofile.model.UserProfile;
+
+public interface ProfileRepository extends MongoRepository <UserProfile , String>{
+	
+//userprofile is for data collection
+}

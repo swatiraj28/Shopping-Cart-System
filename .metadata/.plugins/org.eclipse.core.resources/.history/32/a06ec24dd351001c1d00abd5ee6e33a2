@@ -1,0 +1,11 @@
+package com.casestudy.project.services;
+
+import java.util.List;
+
+import com.casestudy.project.model.Product;
+
+public interface ProductService {
+	public List<Product> findAll();
+	public List<Product> findByCategory(String category);
+
+}

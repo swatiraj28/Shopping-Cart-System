@@ -1,0 +1,56 @@
+package com.casestudy.project.services;
+
+import java.util.List;
+import java.util.Optional;
+
+//implementation class
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.casestudy.project.exceptionhandling.BusinessException;
+import com.casestudy.project.exceptionhandling.EmptyInputException;
+import com.casestudy.project.model.Product;
+import com.casestudy.project.repository.ProductRepository;
+
+public class ProductServiceImpl implements ProductService{
+	@Autowired
+	private ProductRepository productRepository;
+
+	@Override
+	public List<Product> getAllProducts() {
+		List<Product> product= productRepository.findAll();
+		if(product.isEmpty()) {
+			throw new EmptyInputException("222","Product Not Found!");
+		}else
+		{
+			return product;
+			
+		}
+	}
+
+	@Override
+	public Optional<Product> getProductById(int productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product addProduct(Product product) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String updateProduct(Product product, int productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteByProductId(Product product, int productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

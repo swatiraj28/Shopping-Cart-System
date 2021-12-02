@@ -1,0 +1,20 @@
+package com.casestudy.project.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.casestudy.project.services.ProductServiceImpl;
+
+@RestController
+@RequestMapping("/product")
+public class ProductResource {
+	@Autowired
+	ProductServiceImpl productService;
+	
+	GetMapping("/allproducts")
+	public List<product> getallproducts(){
+		return productService.getallProducts();
+	}
+
+}

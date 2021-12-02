@@ -1,0 +1,10 @@
+package com.casestudy.project.ewallet.controller;
+
+public class WalletResource {
+	
+	private String deposit;
+	private String withdraw;
+
+
+
+}

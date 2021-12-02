@@ -1,0 +1,13 @@
+package com.example.demo.cart.service;
+
+import java.util.List;
+
+import com.example.demo.cart.model.Cart;
+
+public interface CartService {
+	public Cart additemtocart( Cart cart);
+	public List<Cart> getAll();
+	public Optional<Cart> getCartItemById( int cartId);
+	public String deleteItembyId(int cartId);
+	public String updateItemDetails( Cart cart, int cartId);
+}

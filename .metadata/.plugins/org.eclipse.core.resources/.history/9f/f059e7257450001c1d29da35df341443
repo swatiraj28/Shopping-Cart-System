@@ -1,0 +1,64 @@
+package com.casestudy.project.ewallet.daolayer;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.casestudy.project.ewallet.model.Ewallet;
+import com.casestudy.project.ewallet.model.Statement;
+import com.casestudy.project.ewallet.repository.EwalletRepository;
+
+public class EwalletServiceImpl implements EwalletService {
+	@Autowired // we also use with implemented class
+	EwalletRepository EwalRepo;
+
+	@Override
+	public List<Ewallet> getWallets() {
+		return (List<Ewallet>) EwalRepo.findAll();
+	}
+
+	@Override
+	public Ewallet addWallet(Ewallet ewal) {
+		Ewallet ew = EwalRepo.save(ewal);
+		return ew;
+	}
+
+	@Override
+	public void addMoney() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Ewallet update(Ewallet ewal) {
+		Ewallet ew = EwalRepo.save(ewal);
+		return ew;
+		
+	}
+
+	@Override
+	public Ewallet getById() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteById() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Statement> getStatementsById() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Statement> getStatements() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

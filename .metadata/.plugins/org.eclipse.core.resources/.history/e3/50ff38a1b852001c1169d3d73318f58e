@@ -1,0 +1,42 @@
+package com.casestudy.project.services;
+
+import java.util.List;
+
+import com.casestudy.project.model.Cart;
+
+public class CartServiceImpl implements CartService {
+	
+	@Autowired
+	CartRepository cartRepo;
+
+	@Override
+	public Cart getCartById(int cardId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cart updateCart(Cart cart) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Cart> getAllcarts(Cart cart) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double cartTotal(Cart cart) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Cart addCart(Cart cart) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

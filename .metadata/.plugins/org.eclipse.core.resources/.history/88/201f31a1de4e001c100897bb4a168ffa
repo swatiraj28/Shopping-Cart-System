@@ -1,0 +1,4 @@
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+server.port=8761
+spring.data.mongodb.uri=mongodb+srv://swatiraj:<password>@cluster0.9v10z.mongodb.net/myFirstDatabase?retryWrites=true&w=majority

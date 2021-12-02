@@ -1,0 +1,64 @@
+package com.casestudy.project.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.casestudy.project.model.Product;
+import com.casestudy.project.services.ProductServiceImpl;
+
+@RestController
+@RequestMapping("/product")
+public class ProductResource {
+	@Autowired
+	ProductServiceImpl productService;
+	
+	@GetMapping("/allproducts")
+	public List<Product> getallproducts(){
+		return productService.getAllProducts();
+	}
+	
+	@GetMapping("/productbyname/{productname}")
+	public List<Product> getProductByName(@PathVariable String productname){
+		return productService.getProductByName(productname);
+	}
+	
+	@GetMapping("/productbycategory/{category}")
+	public List<Product> getProductByCategory(@PathVariable String category){
+		return productService.getProductByCategory(category); 
+	}
+	
+	@GetMapping("/productbytype/{productType}")
+	public List<Product> getProductByType(@PathVariable String productType){
+		return productService.getProductByType(productType);
+	}
+
+	@PostMapping("addproduct")
+	public Product addProduct(@RequestBody Product product) {
+		return productService.addProduct(product);
+	}
+	
+	
+	@PutMapping("/updateproduct")
+	public Product updateProduct(@RequestBody Product product) {
+		return productService.updateProduct(product);
+	}
+	
+	@DeleteMapping("/deletebyname/{productId}")
+	public Product deleteByProductName(@RequestBody String productName) {
+		return productService.deleteByProductName(productName);
+	}
+
+
+
+
+
+
+}

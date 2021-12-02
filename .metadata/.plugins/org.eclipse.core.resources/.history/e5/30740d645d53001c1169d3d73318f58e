@@ -1,0 +1,62 @@
+package com.casestudy.project.services;
+
+import java.util.List;
+
+//implementation class
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.casestudy.project.exceptionhandling.EmptyInputException;
+import com.casestudy.project.model.Product;
+import com.casestudy.project.repository.ProductRepository;
+
+public class ProductServiceImpl implements ProductService{
+	@Autowired
+	private ProductRepository productRepository;
+
+	@Override
+	public List<Product> getAllProducts() {
+		List<Product> allProduct = productRepository.findAll();
+		if(allProduct.isEmpty())
+			throe new BusinessException("604" , "List is empty , Nothing to show");
+		return allProduct;
+	}
+
+	@Override
+	public List<Product> getProductByName(String productName) {
+		
+		return productRepository.findByProductName(productName);
+	}
+
+	@Override
+	public List<Product> getProductByCategory(String category) {
+		
+		return productRepository.findByProductType(category);
+	}
+
+	@Override
+	public List<Product> getProductByType(String productType) {
+		return productRepository.findByProductType(productType);
+	}
+
+	@Override
+	public Product addProduct(Product product) {
+		if(product.getProductName().isEmpty()|| product.getProductName().length()==0) {
+			throw new EmptyInputException("604" , "Input Fields Are Empty");
+			
+		}
+		return productRepository.save(product);
+	}
+
+	@Override
+	public Product updateProduct(Product product) {
+		return productRepository.save(product);
+	}
+
+	@Override
+	public Product deleteByProductName(String productName) {
+		return productRepository.deleteByProductName(productName);
+	}
+	
+
+}

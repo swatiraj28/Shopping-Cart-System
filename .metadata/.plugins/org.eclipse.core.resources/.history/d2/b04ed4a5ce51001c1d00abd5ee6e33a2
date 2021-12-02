@@ -1,0 +1,7 @@
+package com.casestudy.project.services;
+
+public interface ProductService {
+	public List<Product> findAll();
+	public List<Product> findByCategory(String category);
+
+}

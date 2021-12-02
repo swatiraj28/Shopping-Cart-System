@@ -1,0 +1,5 @@
+package com.casestudy.project.services;
+
+public class ProductServiceImpl {
+
+}

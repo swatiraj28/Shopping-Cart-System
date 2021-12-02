@@ -1,0 +1,13 @@
+server:  port: 8083
+
+   
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: Product-Server           
+        uri: http://localhost:8083/         #Respective microservice URL which needs to be mapped
+         #Request Context Path Mapping
+        predicates:
+        - Path=/product/**          
+     

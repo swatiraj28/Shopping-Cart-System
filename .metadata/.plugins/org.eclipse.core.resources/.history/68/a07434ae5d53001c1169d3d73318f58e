@@ -1,0 +1,5 @@
+package com.casestudy.project.exceptionhandling;
+
+public class BusinessException extends RuntimeException {
+
+}

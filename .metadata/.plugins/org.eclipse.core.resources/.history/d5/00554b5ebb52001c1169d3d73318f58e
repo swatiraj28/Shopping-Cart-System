@@ -1,0 +1,25 @@
+package com.casestudy.project;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
+import com.casestudy.project.services.CartServiceImpl;
+
+@SpringBootApplication
+@EnableEurekaServer
+@EnableMongoRepositories
+public class CartServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CartServiceApplication.class, args);
+	}
+
+	@Bean
+	CartServiceImpl cartservice() {
+		return new CartServiceImpl();
+	}
+	
+	}
+

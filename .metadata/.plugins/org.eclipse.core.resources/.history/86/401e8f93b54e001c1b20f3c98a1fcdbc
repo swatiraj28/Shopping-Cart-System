@@ -1,0 +1,6 @@
+package com.casestudy.project.userprofile.repository;
+
+public interface ProfileRepository extends MongoRepository<UserProfile , String>{
+	
+
+}
