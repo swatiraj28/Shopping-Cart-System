@@ -1,8 +1,0 @@
-package com.casestudy.project.userprofile.model;
-
-public enum Role {
-
-	String customer;
-	String merchant;
-	String deliveryAgent;
-}

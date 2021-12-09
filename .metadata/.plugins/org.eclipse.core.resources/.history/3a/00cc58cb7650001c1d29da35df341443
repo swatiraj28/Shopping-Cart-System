@@ -1,5 +1,0 @@
-package com.casestudy.project.ewallet.repository;
-
-public interface StatementsRepository extends MongoRepository<Statement, String> {
-
-}

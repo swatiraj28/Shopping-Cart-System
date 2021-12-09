@@ -1,5 +1,0 @@
-package com.casestudy.project.userprofile.daoLayer;
-
-public interface ProfileRepository {
-
-}

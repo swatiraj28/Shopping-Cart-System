@@ -1,9 +1,0 @@
-package com.casestudy.project.ewallet.repository;
-
-import org.springframework.data.mongodb.repository.MongoRepository;
-
-import com.casestudy.project.ewallet.daolayer.EwalletService;
-
-public interface EwalletRepository extends MongoRepository<EwalletService , String>{
-
-}

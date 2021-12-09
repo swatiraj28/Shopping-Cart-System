@@ -52,13 +52,16 @@ public class ProductServiceImpl implements ProductService{
 
 
 	@Override
-	public String updateProduct(Product product, int productId) {
+	public String updateProduct(Product product, int productId) 
+	{
 		boolean isProductExist = productRepository.existsById(productId);
-		if(isProductExist) {
+		if(isProductExist)
+		{
 		    productRepository.save(product);
 		    return "Product updated"+productId;
 		}
-		else {
+		else
+		{
 			throw new ProductNotFoundException("504" ,"Product Not Found !!");
 		}
 	}

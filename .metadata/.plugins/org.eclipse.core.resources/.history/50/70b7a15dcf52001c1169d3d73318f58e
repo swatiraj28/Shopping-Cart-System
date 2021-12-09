@@ -1,4 +1,0 @@
-server.port=8084
-spring.application.name=cart-service
-spring.data.mongodb.uri=mongodb+srv://guest:guest@cluster0.ovr37.mongodb.net/CartServiceDB?retryWrites=true&w=majority
-spring.data.mongodb.database=CartServiceDB
