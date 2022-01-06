@@ -78,5 +78,18 @@ public class ProductServiceImpl implements ProductService{
 		}
 	}
 
+	@Override
+	public List<Product> getProductByCategory(String category) {
+		List<Product> catagory= productRepository.findByCategory(category);
+
+		if(catagory.isEmpty()) {
+		throw new ProductNotFoundException("506", "OOPPSS !!Category not fount in Cart ");
+		}
+		else {
+		return catagory;
+	}
+	}
+
+	
 
 }

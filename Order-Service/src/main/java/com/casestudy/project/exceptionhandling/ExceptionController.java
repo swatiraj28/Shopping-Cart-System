@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice //global exception handler (Exception controller class)
 public class ExceptionController {
-	
+	//method of exception class
 	@ExceptionHandler(OrderNotFoundException.class)
 	public ResponseEntity<String> handleEmptyInput(OrderNotFoundException orderNotFoundException){
 		return new ResponseEntity<String>(orderNotFoundException.getErrorMessage(), null, HttpStatus.BAD_REQUEST);

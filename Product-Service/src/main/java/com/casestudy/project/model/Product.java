@@ -13,14 +13,13 @@ public class Product {
 	private String productName;
 	private String category;
 	private String image;
+	private int countInStock;
 	private Double price;
 	private int rating;
 	private String description;
-	
 	public int getProductId() {
 		return productId;
 	}
-	
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
@@ -48,6 +47,12 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
+	public int getCountInStock() {
+		return countInStock;
+	}
+	public void setCountInStock(int countInStock) {
+		this.countInStock = countInStock;
+	}
 	public Double getPrice() {
 		return price;
 	}
@@ -66,15 +71,15 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	public Product(int productId, String productType, String productName, String category, String image, Double price,
-			int rating, String description) {
+	public Product(int productId, String productType, String productName, String category, String image,
+			int countInStock, Double price, int rating, String description) {
 		super();
 		this.productId = productId;
 		this.productType = productType;
 		this.productName = productName;
 		this.category = category;
 		this.image = image;
+		this.countInStock = countInStock;
 		this.price = price;
 		this.rating = rating;
 		this.description = description;
@@ -85,26 +90,9 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productType=" + productType + ", productName=" + productName
-				+ ", category=" + category + ", image=" + image + ", price=" + price + ", rating=" + rating
-				+ ", description=" + description + "]";
+				+ ", category=" + category + ", image=" + image + ", countInStock=" + countInStock + ", price=" + price
+				+ ", rating=" + rating + ", description=" + description + "]";
 	}
-	@Override
-	public int hashCode() {
-		return Objects.hash(category, description, image, price, productId, productName, productType, rating);
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Product other = (Product) obj;
-		return Objects.equals(category, other.category) && Objects.equals(description, other.description)
-				&& Objects.equals(image, other.image) && Objects.equals(price, other.price)
-				&& productId == other.productId && Objects.equals(productName, other.productName)
-				&& Objects.equals(productType, other.productType) && rating == other.rating;
-	}
+	
 	
 }

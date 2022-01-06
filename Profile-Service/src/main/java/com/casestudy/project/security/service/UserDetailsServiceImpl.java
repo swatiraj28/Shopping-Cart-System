@@ -9,8 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.casestudy.project.model.User;
 import com.casestudy.project.repository.UserRepository;
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
+
 	@Autowired
 	UserRepository userRepository;
 
@@ -22,5 +24,6 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 
 		return UserDetailsImpl.build(user);
 	}
+
 
 }

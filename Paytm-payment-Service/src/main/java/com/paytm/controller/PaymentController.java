@@ -27,30 +27,30 @@ public class PaymentController {
 	private PaytmDetails paytmDetails;
 	
 	@Autowired
-	private Environment env;
+	private Environment env;           //my own project env (application , yml files)
 	
 	@RequestMapping("/payment")
 	public String getPaymentDetails() {
-		return "paymentDetails.jsp";
+		return "paymentDetails.jsp";           //jsp file 
 	}
 	
 	@PostMapping("/pgredirect")
-	public ModelAndView getRedirect(@RequestParam(name = "CUST_ID") String customerId,
+	public ModelAndView getRedirect(@RequestParam(name = "CUST_ID") String customerId,     //taling response from user
             @RequestParam(name = "TXN_AMOUNT") String transactionAmount,
             @RequestParam(name = "ORDER_ID") String orderId) throws Exception {
 
 		ModelAndView modelAndView = new ModelAndView("redirect:" + paytmDetails.getPaytmUrl());
 		TreeMap<String, String> parameters = new TreeMap<>();
 		paytmDetails.getDetails().forEach((k, v) -> parameters.put(k, v));
-		parameters.put("MOBILE_NO", env.getProperty("paytm.mobile"));
+		parameters.put("MOBILE_NO", env.getProperty("paytm.mobile"));    //fetching from yml file
 		parameters.put("EMAIL", env.getProperty("paytm.email"));
 		parameters.put("ORDER_ID", orderId);
 		parameters.put("TXN_AMOUNT", transactionAmount);
 		parameters.put("CUST_ID", customerId);
 		String checkSum = getCheckSum(parameters);
-		parameters.put("CHECKSUMHASH", checkSum);
+		parameters.put("CHECKSUMHASH", checkSum);        //takes in the parameter
 		modelAndView.addAllObjects(parameters);
-		return modelAndView;
+		return modelAndView;       //helps controller to return both model and view at same time into single return val
 	}
 	
 	@PostMapping(value = "/pgresponse")

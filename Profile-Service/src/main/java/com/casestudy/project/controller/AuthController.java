@@ -1,6 +1,5 @@
 package com.casestudy.project.controller;
 
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -22,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.casestudy.project.model.ERole;
 import com.casestudy.project.model.Role;
 import com.casestudy.project.model.User;
 import com.casestudy.project.payload.request.LoginRequest;
@@ -34,10 +33,12 @@ import com.casestudy.project.repository.UserRepository;
 import com.casestudy.project.security.jwt.JwtUtils;
 import com.casestudy.project.security.service.UserDetailsImpl;
 
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+	
 	@Autowired
 	AuthenticationManager authenticationManager;
 
@@ -53,8 +54,8 @@ public class AuthController {
 	@Autowired
 	JwtUtils jwtUtils;
 	
-	//FOR SIGN-IN
-
+	
+	// FOR SIGNING IN
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -73,7 +74,7 @@ public class AuthController {
 												 userDetails.getId(), 
 												 userDetails.getUsername(), 
 												 userDetails.getEmail(), 
-												 jwt, roles));
+												 roles));
 	}
 	
 	
@@ -96,10 +97,12 @@ public class AuthController {
 		
 		
 
+		// Create new user's account
+		
 		User user = new User();
 		user.setUsername( signUpRequest.getUsername());
 		user.setEmail(signUpRequest.getEmail());
-		user.setPassword(signUpRequest.getPassword());
+		user.setPassword(encoder.encode(signUpRequest.getPassword()));
 		
 		 String  strRoles = signUpRequest.getRoles();
 		
@@ -112,14 +115,14 @@ public class AuthController {
 		
 					Optional<Role> userRole = roleRepository.findByName("ROLE_CUSTOMER");
 					System.out.println(userRole);
-				
+					
 		} else {
 			
 
 			Optional<Role> userRole = roleRepository.findByName("ROLE_MERCHANT");
 			System.out.println(userRole);
 			
-			
+		
 		}
 
 		user.setRoles(roles);

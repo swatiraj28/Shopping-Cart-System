@@ -15,9 +15,6 @@ import com.casestudy.project.repository.ProductRepository;
 public class ProductTestController {
 		@MockBean
 		  private ProductRepository productRepository;
-		//@Autowired
-		//private WebApplicationContext webApplicationContext;
-		
 		
 		@Autowired
 		private MockMvc mockMvc;

@@ -17,7 +17,7 @@
             <div class="col-md-9 register-right">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h2 class="register-heading">Paytm Payment Service</h2>
+                        <h2 class="register-heading" style="color: blue;">Paytm Payment Service</h2>
 
                         <div class="row register-form">
                             <div class="col-md-10">

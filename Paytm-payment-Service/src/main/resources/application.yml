@@ -1,7 +1,7 @@
 paytm.payment:
   sandbox:
-    merchantId: mmrBFt18997086680641
-    merchantKey: 60iqE3t6FNtZcCPh
+    merchantId: mmrBFt18997086680641     #my own id from paytm
+    merchantKey: 60iqE3t6FNtZcCPh           #my own key from paytm
     channelId: WEB
     website: WEBSTAGING
     industryTypeId: Retail

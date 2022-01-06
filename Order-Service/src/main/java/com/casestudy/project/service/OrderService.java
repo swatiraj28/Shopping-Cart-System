@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.casestudy.project.model.Orders;
 
-public interface OrderService {
+public interface OrderService { // to provide loose coupling 
 	
 	List<Orders> getAllOrders();
 	Orders addOrder(Orders orders);

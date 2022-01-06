@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Configuration
 @ConfigurationProperties("paytm.payment.sandbox")
-public class PaytmDetails {
+public class PaytmDetails {              //model class
 	
 	private String merchantId;
 

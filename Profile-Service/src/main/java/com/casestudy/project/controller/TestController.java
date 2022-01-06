@@ -17,6 +17,7 @@ import com.casestudy.project.repository.UserRepository;
 @RestController
 @RequestMapping("/api/test")
 public class TestController {
+	
 	private final UserRepository userRepository;
 	public TestController(UserRepository userRepository) {
 		this.userRepository=userRepository;
@@ -31,12 +32,6 @@ public class TestController {
 	@PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
 	public String userAccess() {
 		return "User Content.";
-	}
-	
-	@GetMapping("/mod")
-	@PreAuthorize("hasRole('MODERATOR')")
-	public String moderatorAccess() {
-		return "Moderator Board.";
 	}
 
 	@GetMapping("/admin")
@@ -56,6 +51,4 @@ public class TestController {
 		  userRepository.deleteById(id);
 		
 	}
-
 }
-

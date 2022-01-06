@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.casestudy.project.model.Product;
 import com.casestudy.project.services.ProductService;
-
+@CrossOrigin(origins="http://localhost:3000") 
 @RestController // Controller class
 @RequestMapping("/api/product")
 public class ProductResource {
@@ -31,6 +32,15 @@ public class ProductResource {
 
 	return productService.getProductById(productId);
 	}
+	
+	//getting the product by its category
+
+	@GetMapping("/Category/{category}")
+    public List<Product> getProductByCategory(@PathVariable String category){
+    return productService.getProductByCategory(category);
+
+	}
+	
 	@PostMapping("/addproduct")
 	public Product addProduct(@RequestBody Product product) {
 		return productService.addProduct(product);
