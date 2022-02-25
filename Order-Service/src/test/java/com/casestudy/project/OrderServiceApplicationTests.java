@@ -45,15 +45,15 @@ class OrderServiceApplicationTests {
 	                .collect(Collectors.toList()));
 	        assertEquals(2,orderService.getAllOrders().size());
 	    }
-	    @Test
-	    public void addOrders()
-	    {
-	    	Orders order = new Orders(1,2021-12-12,10,200.98,"Paytm","paid",3,Arrays.asList(new Product(1,"grocery")),
-	    		Arrays.asList(new Address(10,"Swati","1234576","ranchi","Jharkhand","1233456")));
-	    when(orderRepository.save(order)).thenReturn(order);
-	    assertEquals(order,orderService.addOrder(order));
-	    }
-	    
+//	    @Test
+//	    public void addOrders()
+//	    {
+//	    	Orders order = new Orders(1,2021-12-12,10,200.98,"Paytm","paid",3,Arrays.asList(new Product(1,"grocery")),
+//	    		Arrays.asList(new Address(10,"Swati","1234576","ranchi","Jharkhand","1233456")));
+//	    when(orderRepository.save(order)).thenReturn(order);
+//	    assertEquals(order,orderService.addOrder(order));
+//	    }
+//	    
 	   @Test
 	   @Order(1)
 	   @Rollback(value = false)

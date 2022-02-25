@@ -6,8 +6,10 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-			<item value="C:\Users\SWATIRAJ\Documents\SpringCaseStudy\ProfileService"/>
 			<item value="C:\Users\SWATIRAJ\Documents\SpringCaseStudy\Profile-Service"/>
+			<item value="C:\Users\SWATIRAJ\Documents\SpringCaseStudy\ProfileService"/>
+			<item value="C:\Users\SWATIRAJ\Downloads\ProfileService"/>
+			<item value="C:\Users\SWATIRAJ\Documents\SpringCaseStudy\Eureka-Server"/>
 			<item value="C:\Users\SWATIRAJ\Documents\SpringCaseStudy\UserManagement"/>
 			<item value="C:\Users\SWATIRAJ\Documents\SpringCaseStudy\Order-Service"/>
 			<item value="C:\SpringCaseStudy\my project\SpringCaseStudy\Order-Service"/>
